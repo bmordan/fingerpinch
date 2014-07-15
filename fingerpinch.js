@@ -7,12 +7,11 @@ if (Meteor.isClient) {
     Hammer(el).on('touch pinch', function(e){
       //console.log(e);
       e.gesture.preventDefault();
-      var ox=e.gesture.srcEvent.changedTouches[0].pageX,oy=e.gesture.srcEvent.changedTouches[0].pageY,dx=e.gesture.srcEvent.changedTouches[1].pageX,dy=e.gesture.srcEvent.changedTouches[1].pageY,snap=70;
+      var ox=e.gesture.srcEvent.changedTouches[0].pageX,oy=e.gesture.srcEvent.changedTouches[0].pageY,dx=e.gesture.srcEvent.changedTouches[1].pageX,dy=e.gesture.srcEvent.changedTouches[1].pageY,snap=120;
       console.log(ox+','+oy+'|'+dx+','+dy);
       if(ox>dx && oy<dy){
         var disX=ox-dx;
         var disY=dy-oy;
-        console.log('/^ '+disX+','+disY);
         if(disX<snap || disY<snap){disX=0;disY=0;}
         e.currentTarget.children.markerO.style.left = dx + 'px';
         e.currentTarget.children.markerO.style.top = oy + 'px';
@@ -21,7 +20,6 @@ if (Meteor.isClient) {
       }else if(ox<dx && oy<dy){
         var disX=dx-ox;
         var disY=dy-oy;
-        console.log('\\^ '+disX+','+disY);
         if(disX<snap || disY<snap){disX=0;disY=0;}
         e.currentTarget.children.markerO.style.left = ox + 'px';
         e.currentTarget.children.markerO.style.top = oy + 'px';
@@ -30,7 +28,6 @@ if (Meteor.isClient) {
       }else if(ox>dx && oy>dy){
         var disX=ox-dx;
         var disY=oy-dy;
-        console.log('\\V '+disX+','+disY);
         if(disX<snap || disY<snap){disX=0;disY=0;}
         e.currentTarget.children.markerO.style.left = dx + 'px';
         e.currentTarget.children.markerO.style.top = dy + 'px';
@@ -39,7 +36,6 @@ if (Meteor.isClient) {
       }else if(ox<dx && oy>dy){
         var disX=dx-ox;
         var disY=oy-dy;
-        console.log('/V '+disX+','+disY);
         if(disX<snap || disY<snap){disX=0;disY=0;}
         e.currentTarget.children.markerO.style.left = ox + 'px';
         e.currentTarget.children.markerO.style.top = dy + 'px';
