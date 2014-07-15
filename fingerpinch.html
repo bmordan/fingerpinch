@@ -1,0 +1,21 @@
+<head>
+  <title>fingerpinch</title>
+  <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+  {{> pad}}
+</body>
+
+<template name="delta">
+  <div id="delta"></div>
+</template>  
+
+<template name="pad">
+  <div id="pad">{{> delta}}{{> markerO}}</div>
+</template>
+
+<template name="markerO">
+  <div id="markerO"></div>
+</template>

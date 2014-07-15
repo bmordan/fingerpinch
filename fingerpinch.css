@@ -1,0 +1,6 @@
+/* CSS declarations go here */
+#delta{font-size:0.8em;margin: -9px 0px 0px 45px;float:left;}
+#pad{width:90%;height:400px;background:#11007A;margin:auto;color:#fff;padding:12px;}
+#markerO{position:absolute;}
+/* CSS declarations go here */
+#markerO{border: 10px dashed #fff;}
